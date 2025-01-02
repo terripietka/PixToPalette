@@ -35,7 +35,7 @@ The app’s foundation lies in the principles outlined in an [R-bloggers article
 
 ### **Clone the Repository**
 
-git clone <https://github.com/terri-pietka-ds/PixToPalette.git>\
+git clone <https://github.com/terripietka/PixToPalette.git>\
 cd PixToPalette
 
 ## **Repository Structure**
