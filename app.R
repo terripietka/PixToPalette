@@ -63,8 +63,7 @@ server <- function(input, output, session) {
     }
 
     # Return the HTML for the image
-    tags$img(src = base64, style = "max-width: 100%; max-height: 300px; width: auto; height: auto;")
-
+    tags$img(src = base64, style = "display: block; margin-left: auto; margin-right: auto; max-width: 100%; max-height: 300px; width: auto; height: auto;")
   })
 
   # Read and process the image
