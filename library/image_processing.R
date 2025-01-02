@@ -1,39 +1,43 @@
-#### function to convert image pixel data to dataframe ####
+library(imager)
 
-#### function to convert image pixel data to dataframe ####
+library(imager)
 
-library(png)
-library(jpeg)
-library(magick)
-
-image_to_df <- function(image_file) {
+image_to_df <- function(image_file, max_dim = 500, sample_fraction = 1) {
   # Check if the file exists
   if (!file.exists(image_file)) {
     stop("File does not exist. Please provide a valid file path.")
   }
 
-  # Determine file type by extension
-  file_extension <- tools::file_ext(image_file)
+  # Load the image
+  image <- load.image(image_file)
 
-  # Read and resize the image
-  if (tolower(file_extension) == "png" || tolower(file_extension) == "jpg" || tolower(file_extension) == "jpeg") {
-    image <- image_read(image_file)
-    image <- image_scale(image, "300")
-    image <- as.raster(image)
-  } else {
-    stop("Unsupported file format. Please use a PNG or JPG file.")
+  # Get current dimensions of the image
+  width <- dim(image)[1]
+  height <- dim(image)[2]
+
+  # Calculate resize ratio based on max_dim
+  resize_ratio <- min(max_dim / width, max_dim / height, 1)
+
+  # Resize the image if it exceeds max dimensions
+  if (resize_ratio < 1) {
+    image <- imresize(image, resize_ratio)
   }
 
-  # Convert the image to a matrix and then to a data frame
-  image_matrix <- as.matrix(image)
-  image_df <- data.frame(
-    Red = as.numeric(image_matrix[, , 1]),
-    Green = as.numeric(image_matrix[, , 2]),
-    Blue = as.numeric(image_matrix[, , 3])
-  )
+  # Convert to data frame with RGB values
+  image_RGB <- as.data.frame(image, wide = "c") %>%
+    rename(R = c.1, G = c.2, B = c.3) %>%
+    mutate(hexvalue = rgb(R / 255, G / 255, B / 255))
+
+  # Sample a fraction of the pixels if sample_fraction < 1
+  if (sample_fraction < 1) {
+    image_RGB <- image_RGB %>%
+      sample_frac(sample_fraction)
+  }
 
   # Remove any rows with NA values
-  image_df <- na.omit(image_df)
+  image_df <- na.omit(image_RGB)
 
   return(image_df)
 }
+
+

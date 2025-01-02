@@ -1,0 +1,13 @@
+name: PixToPalette
+title: PixToPalette
+username: terripietka
+account: terripietka
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 13652735
+bundleId: 9596813
+url: https://terripietka.shinyapps.io/PixToPalette/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: green profile.jpg|resized_green.jpg|sedona.jpg|sedona2.jpg|VI_Beach.jpg|vi2.jpg|vi2.png
