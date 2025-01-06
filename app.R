@@ -36,7 +36,12 @@ ui <- fluidPage(
       withSpinner(plotOutput("palette_plot")),
       h4("Hex Codes"),
       verbatimTextOutput("hex_codes"),
-      downloadButton("download_hex", "Download Hex Codes")
+      downloadButton("download_hex", "Download Hex Codes"),
+      capture::capture_pdf(
+        selector = "body",
+        filename = "palette.pdf",
+        icon("download", "Download PDF"), "Download PDF of results"
+      )
     )
   )
 )
