@@ -1,4 +1,4 @@
-![](images/PixToPalette.png){width="200"}
+<img src="images/PixToPalette.png" width="200">
 
 # **PixToPalette: Generate a Custom Color Palette from Your Images**
 
@@ -35,7 +35,7 @@ The app’s foundation lies in the principles outlined in an [R-bloggers article
 
 ### **Clone the Repository**
 
-git clone <https://github.com/terri-pietka-ds/PixToPalette.git>\
+git clone <https://github.com/terripietka/PixToPalette.git>\
 cd PixToPalette
 
 ## **Repository Structure**
@@ -57,11 +57,11 @@ Here are a couple examples of a generated palette from sample images:
 
 1.  **Sedona**:
 
-![](images/sedona.png){width="500"}
+<img src="images/sedona.png" width="300">
 
 2.  **Mount Rainier**:
 
-![](images/rainier.png){width="500"}
+<img src="images/rainier.png" width="300">
 
 ## **License**
 
