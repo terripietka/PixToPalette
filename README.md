@@ -4,7 +4,7 @@
 
 ## **Overview**
 
-PixToPalette is a Shiny application that allows users to upload an image and generate a custom color palette based on the dominant colors in the image. By using k-means clustering, the app identifies the key colors in the image, providing a versatile tool for designers, data scientists, and anyone who needs a tailored color scheme. Users can select the number of colors they want in their palette, ensuring flexibility for various use cases.
+PixToPalette is a Shiny application that allows users to upload an image and generate a custom color palette based on the dominant colors in the image. By using k-means clustering, the app identifies the key colors in the image, providing a versatile tool for anyone who needs a tailored color scheme - whether the application be graphic design, informatics or interior design. Users can select the number of colors they want in their palette, ensuring flexibility for various use cases.  Hex codes can be easily exported for use or results can be downloaded as a PDF.
 
 ### **Inspiration**
 
