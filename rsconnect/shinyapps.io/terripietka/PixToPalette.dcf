@@ -5,7 +5,7 @@ account: terripietka
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 13652735
-bundleId: 9596813
+bundleId: 9617081
 url: https://terripietka.shinyapps.io/PixToPalette/
 version: 1
 asMultiple: FALSE
